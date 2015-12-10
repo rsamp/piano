@@ -3,13 +3,19 @@ var KeyStore = require('../stores/KeyStore');
 
 var Mapping = {
   65: 'C4',
-  83: 'D4',
-  68: 'E4',
-  70: 'F4',
-  74: 'G4',
-  75: 'A4',
-  76: 'B4',
-  186: 'C5'
+  87: 'D4',
+  83: 'E4',
+  69: 'F4',
+  68: 'G4',
+  82: 'A4',
+  70: 'B4',
+  74: 'C5',
+  73: 'D5',
+  75: 'E5',
+  79: 'F5',
+  76: 'G5',
+  186: 'A6'
+
 };
 
 $(document).on("keydown", function(e){

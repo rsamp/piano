@@ -9,7 +9,7 @@ var Organ = React.createClass({
     var keys = noteNames.map(function(note, idx) {
       return <Key key={idx} noteName={note} />;
     });
-
+    
     return(
       <div className="container">
         {keys}

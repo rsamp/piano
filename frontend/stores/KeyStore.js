@@ -21,22 +21,22 @@ KeyStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case "ADD_KEY":
       addKey(payload.noteName);
+      KeyStore.__emitChange();
       break;
     case "DELETE_KEY":
       deleteKey(payload.noteName);
+      KeyStore.__emitChange();
       break;
   }
 };
 
 var addKey = function(key) {
   _keys.push(key);
-  KeyStore.__emitChange();
 };
 
 var deleteKey = function(key) {
   var idx = _keys.indexOf(key);
   _keys.splice(idx, 1);
-  KeyStore.__emitChange();
 };
 
 module.exports = KeyStore;

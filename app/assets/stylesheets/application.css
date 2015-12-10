@@ -14,15 +14,34 @@
  *= require_self
  */
 
-.key {
-  width: 30px;
-  height: 200px;
-  border: 1px solid black;
+.white {
+  width: 100px;
+  height: 600px;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
   float: left;
 }
 
+.black {
+  width: 33px;
+  height: 300px;
+  border: 1px solid black;
+  float: left;
+
+}
+
+.white:first-of-type {
+  border-left: 1px solid black;
+}
+
 .container {
-  border: 5px solid black;
+  /*border: 5px solid black;*/
   margin: auto;
-  width: 256px;
+  width: 2000px;
+}
+
+.pressed {
+  box-shadow: 0px -4px 5px 5px #000;
+  background-color: pink;
 }
