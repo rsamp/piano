@@ -1,8 +1,8 @@
 var Store = require('flux/utils').Store;
-var AppDispatcher = require('../dispatcher');
+var AppDispatcher = require('../dispatcher/Dispatcher');
 
 
-var KeyStore = Store.new(AppDispatcher);
+var KeyStore = new Store(AppDispatcher);
 
 var _keys = [];
 
@@ -10,13 +10,20 @@ KeyStore.all = function() {
   return _keys.slice();
 };
 
+KeyStore.include = function(key) {
+  if (_keys.indexOf(key) !== -1) {
+    return true;
+  }
+  return false;
+};
+
 KeyStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case "ADD_KEY":
-      addKey(payload.key);
+      addKey(payload.noteName);
       break;
     case "DELETE_KEY":
-      deleteKey(payload.key);
+      deleteKey(payload.noteName);
       break;
   }
 };
@@ -28,7 +35,7 @@ var addKey = function(key) {
 
 var deleteKey = function(key) {
   var idx = _keys.indexOf(key);
-  _keys.slice(idx, 1);
+  _keys.splice(idx, 1);
   KeyStore.__emitChange();
 };
 

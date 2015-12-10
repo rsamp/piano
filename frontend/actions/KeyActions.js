@@ -1,17 +1,17 @@
-var AppDispatcher = require('../dispatcher');
+var AppDispatcher = require('../dispatcher/Dispatcher');
 
 var KeyActions = {
-  keyPressed: function(key){
+  keyPressed: function(noteName){
     AppDispatcher.dispatch({
       actionType: "ADD_KEY",
-      key: key
+      noteName: noteName
     });
   },
 
-  keyReleased: function(key){
+  keyReleased: function(noteName){
     AppDispatcher.dispatch({
       actionType: "DELETE_KEY",
-      key: key
+      noteName: noteName
     });
   }
 
